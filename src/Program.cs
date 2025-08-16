@@ -8,6 +8,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<SchoolContext>(options =>
    options.UseNpgsql(builder.Configuration.GetConnectionString("SchoolContext")));
 
+Console.WriteLine("Connection string 123: " + builder.Configuration.GetConnectionString("SchoolContext"));
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
